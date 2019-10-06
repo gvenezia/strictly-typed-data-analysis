@@ -1,11 +1,6 @@
-import * as fs from "fs";
+import parseCSV from "./parse-csv";
 
-const matchData = fs
-  .readFileSync("./football.csv", {
-    encoding: "utf-8"
-  })
-  .split("\n")
-  .map((line: string): string[] => line.split(","));
+const matchData = parseCSV("./football.csv");
 
 enum MatchResult {
   HomeWin = "H",
