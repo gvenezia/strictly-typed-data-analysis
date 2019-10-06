@@ -6,7 +6,7 @@ const parseCSV = (file: string): string[][] => {
       encoding: "utf-8"
     })
     .split("\n")
-    .map((line: string): string[] => line.split(","));
+    .map((line: string): any => line.split(","));
 };
 
 export default parseCSV;
