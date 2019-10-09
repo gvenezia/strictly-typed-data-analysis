@@ -1,6 +1,6 @@
 import { parseCSV, formatData } from "./DataManipulations";
 import { MatchResult } from "./enums";
-import MatchData from "./MatchData";
+import { MatchData } from "./tuples";
 
 const matchData = parseCSV("./football.csv");
 
