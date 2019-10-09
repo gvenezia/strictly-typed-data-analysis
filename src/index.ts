@@ -1,17 +1,10 @@
-import parseCSV from "./parse-csv";
-import { parseDate } from "./util";
+import { parseCSV, formatData } from "./DataManipulations";
 import { MatchResult } from "./enums";
-
-type MatchData = [Date, string, string, number, number, MatchResult, string];
+import MatchData from "./MatchData";
 
 const matchData = parseCSV("./football.csv");
 
-matchData.forEach((line: any): void => {
-  line[0] = parseDate(line[0]);
-  line[3] = +line[3];
-  line[4] = +line[4];
-  line[5] = line[5] as MatchResult;
-});
+const formattedData = formatData(matchData);
 
 const findNumOfWins = (team: string): number => {
   return matchData.filter(
